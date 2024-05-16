@@ -1,0 +1,69 @@
+header {
+    background-color: #A60F2D;
+    text-align: right;
+    color: #ebebeb;
+}
+
+body {
+    font-family: Verdana, serif;
+    margin-bottom: 20px;
+}
+
+/*    **************          Navigation menu     **********            */
+nav {
+    height: 30px;
+    padding: 10px;
+}
+
+#mainMenu a {
+    padding-right: 3%; /* Adjust the value to increase or decrease the spacing between elements in <nav>. */
+}
+
+#mainMenu a:hover {
+    color: white;
+
+}
+
+/*          ************   Main content of the webpage formatting  *************            */
+
+a:hover{
+    color: rgb(39, 117, 205);
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 0px;
+}
+
+body {
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-top: 1%;
+    background-color: white;
+}
+
+footer {
+    background-color: #A60F2D;
+    text-align: center;
+    color: #ebebeb;
+    height: 30px;
+    padding: 10px;
+    margin-top: 2%;
+}
+
+/*          ************   Map alignment on the Map visualization page  *************            */
+
+#map { 
+    position: absolute;
+    top: 75px;
+    bottom: 0;
+    left: 1%;
+    right: 1%;
+    margin-top: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+}

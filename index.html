@@ -1,47 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meteorite landings </title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <style>
-    #map { position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteorite data</title>
+    <!-- add a reference to the stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <script></script>
 </head>
+
 <body>
-  <div id="map"></div>
+    <header>
+        <nav id="mainMenu">
+            <a href="index.html">Home</a>
+            <a href="jsonToMap.html">Map visualization</a>
+            <a href="scvToChart.html">Chart representation</a>
+            <a href="https://github.com/uhnv/metorite_landings" target="_blank">GIThub Link</a>
+        </nav>
+    </header>
 
-  
-  <script>
-    // Initialize the map
-    var map = L.map('map').setView([0, 0], 2); // Centered at (0,0) with zoom level 2
 
-    // Add the base map
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+    <h2>Meteorite Data Representation</h2>
+    <p> The goal of this project is to demonstrate the ability to:
+    <ul>
+        <li>Consume data programmatically from a given resource</li>
+        <li>Understand the data presented</li>
+        <li>Organize/disseminate/communicate the data in a presentable format</li>
+        <li>Utilize a GitHub source code repository</li>
+    </ul>
+    The data is taken from NASA <a href=https://catalog.data.gov/dataset/meteorite-landings 
+        target="_blank">meteorite landings "Downloads & Resources"</a> page.
+    </p>
+    <p>In addition to requirements this web page is done using <a href=https://brand.wsu.edu/colors target="_blank">WSU
+            Colors Guidance</a>.
+    </p>
+    <hr>
 
-    // Fetch the JSON data from the NASA API URL
-    fetch('https://data.nasa.gov/api/views/gh4g-9sfh/rows.json?accessType=DOWNLOAD')
-    .then(response => response.json())
-    .then(data => {
-    // Extract the rows containing meteorite data
-    var rows = data.data;
+    <div>
+        <h2>Consuming and Analyzing Data</h2>
+        <p>
+            Data analyzing was done in two parts of the project.
+            In the navigation bar you can go to "Map visualization" or "Chart representation" to see different ways to
+            consume provided data.
+        </p>
 
-    // Parse the rows and add markers to the map
-    rows.forEach(function(row) {
-        let latitude = parseFloat(row[15]);
-        let longitude = parseFloat(row[16]);
-        L.marker([latitude, longitude]).addTo(map)
-        .bindPopup(`Place: ${row[8]}, <br>Mass (g): ${row[12]}, <br>Fell status: ${row[13]}, <br> Date: ${row[14]}`)
-        .openPopup();
-        });
-        
-    })
-    .catch(error => console.error('Error fetching data:', error));
-      
-  </script>
+        <p>
+            The "Map visualization" page is the representation of the data from JSON file.
+            This is an interactive map with meteorite landings actross the World.
+            To create this meteorite landings map I have used <a href=https://leafletjs.com/ target="_blank">LeafletJS
+            </a> open source interactive map liblrary.
+            Each marker on the map represents a meteorite landing indicating it's actual position on the map.
+            The variety of the library functionality was used, you can click on the marker and see the pop-up label with
+            additional information for particular meteorite.
+            All data as the marker position and pop-up label is taken from the provided JSON file.
+        </p>
+
+        <p>
+            For the second part of the project the data from the provided CSV file was used.
+            "Chart representation" page provides several different charts that are.....
+            <br>*********bla
+            <br> ****************************bla
+
+            <br> ***********************************************bbb lll aaa
+        </p>
+
+        <p>
+        <h2>GIThub repository</h2>
+        GIThub Code: <a href="https://github.com/uhnv/metorite_landings" target="_blank">Project source code.</a>
+        <br>
+        GIThub page: <a href="https://uhnv.github.io/metorite_landings" target="_blank">Web page.</a>
+        </p>
+    </div>
+
 </body>
+
+<footer>
+    <p>Data consumption project for WSU technical interview | May 2024 | Meteorite data</p>
+</footer>
+
 </html>
