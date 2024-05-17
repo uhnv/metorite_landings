@@ -46,6 +46,13 @@ body {
     background-color: white;
 }
 
+.image {
+    float: left;
+    margin-top: 10px;
+    margin-right: 100%;
+    margin-bottom: 20px; 
+}
+
 footer {
     background-color: #A60F2D;
     text-align: center;
