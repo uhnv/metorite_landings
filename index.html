@@ -7,7 +7,7 @@
     <title>Meteorite data</title>
     <!-- add a reference to the stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <script></script>
+
 </head>
 
 <body>
@@ -37,7 +37,11 @@
             Colors Guidance</a>.
     </p>
     <hr>
-
+    <h2>Eastern Egg</h2>
+    <p>An eastern egg found while working on the project, check if it is still <a
+            href="https://www.google.com/search?q=meteorite&rlz=1C1CHBF_enUS1030US1030&oq=meteorite&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIICAEQRRgnGDsyBwgCEAAYgAQyBwgDEAAYgAQyDwgEEAAYQxixAxiABBiKBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDI4NzFqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8"
+            target="_blank">here</a>.</p>
+    <hr>
     <div>
         <h2>Consuming and Analyzing Data</h2>
         <p>
@@ -68,12 +72,13 @@
 
 
         <div>
-            <h2>Problems and Observations</h2>
+            <h2>Problems</h2>
+
             <p><b>I.</b> After the initial setup was done I realized that not all entries were displayed on the map.<br>
-            This might be caused by two issuess:
+                This might be caused by two issuess:
             <ul>
-                <li>1. Leaflet has limitations on rendering large number of the objects (markers) on the map.</li>
-                <li>2. Additionally, not all the entries have valid longitude and latitude. 
+                <li>Leaflet might have limitations on rendering large number of the objects (markers) on the map.</li>
+                <li>Additionally, not all the entries have valid longitude and latitude.
                     (See the image below. The higlited stuff is the entry with no geolocation.)
                     Thus, the code execution stops on the first invalid entry throwing the error in the browser
                     console.</li>
@@ -82,14 +87,28 @@
             <div class="image">
                 <img src="nullGeo.JPG">
             </div>
-            <p><b>Solutions:</b> Filter out the invalid values, and handle the errors, so the execution will not be interrupted.<br>
-            The limitation issue was solved using the cirkles instead of markers, here is the <a href="https://stackoverflow.com/questions/43015854/large-dataset-of-markers-or-dots-in-leaflet" target ="_blank">solution</a> idea.
-            It seems that cirkles worked out, but performanse feels not the best, but still usable. All entries are processed (see the console output on the image below.)
-            Another way to solve this issue, and make performace better might be a plugin for LeafletJS library (not tested yet), or use another library instead of LeafletJS.
+            <p><b>Solutions:</b><br>
+            <ul>
+                <li>Filter out the invalid values, and handle the errors, so the execution will not be interrupted.</li>
+                <li>The limitation issue was solved using the cirkles instead of markers, here is the <a
+                        href="https://stackoverflow.com/questions/43015854/large-dataset-of-markers-or-dots-in-leaflet"
+                        target="_blank">solution</a> idea.
+            </ul>
+            It seems that cirkles worked out, and performanse looks not the best at the same time, but still usable.
+            All entries are processed (see the console output on the image below.)
+            Another possible way to solve this issue, and make performace better might be a plugin for LeafletJS library
+            (not tested yet), or changing the LeafletJS library to another one.
+
             <div class="image">
                 <img src="noErrorConsole.JPG">
             </div>
-        </p>
+            </p>
+            </p>
+            <hr>
+            <h2>Observations</h2>
+            <p>
+                Provided data is not consistent.
+                The issue with rendering all entries from the JSON might not be present if data would be more accurate.
             </p>
         </div>
         <hr>
