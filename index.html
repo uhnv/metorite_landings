@@ -32,54 +32,45 @@
     The data is taken from NASA <a href="https://catalog.data.gov/dataset/meteorite-landings" target="_blank">meteorite
         landings "Downloads & Resources"</a> page.
     </p>
-    <p>In addition to requirements this web page is made using <a href="https://brand.wsu.edu/colors"
+    <p>In addition to requirements this project is made using <a href="https://brand.wsu.edu/colors"
             target="_blank">WSU
             Colors Guidance</a>.
     </p>
     <hr>
-    <h2>Eastern Egg</h2>
-    <p>An eastern egg found while working on the project, check if it is still <a
-            href="https://www.google.com/search?q=meteorite&rlz=1C1CHBF_enUS1030US1030&oq=meteorite&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIICAEQRRgnGDsyBwgCEAAYgAQyBwgDEAAYgAQyDwgEEAAYQxixAxiABBiKBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDI4NzFqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8"
-            target="_blank">here</a>.</p>
-    <hr>
+    
     <div>
         <h2>Consuming and Analyzing Data</h2>
         <p>
-            Data analyzing was done in two parts of the project.
-            In the navigation bar you can go to "Map visualization" or "Chart representation" to see different ways to
-            consume provided data.
+            Data visualization and analysis were done in two parts of the project.
+            In the navigation bar, the user can go to "Map visualization" or "Chart representation" to see different ways to consume the provided data.
         </p>
 
         <p>
-            The "Map visualization" page is the representation of the data from JSON file.
-            This is an interactive map with meteorite landings actross the World.
+            The "Map visualization" page is a representation of the data from JSON file.
+            This is an interactive map with meteorite landings across the World.
             To create this meteorite landings map I have used <a href="https://leafletjs.com" target="_blank">LeafletJS
-            </a> open source interactive map liblrary.
-            Each marker on the map represents a meteorite landing indicating it's actual position on the map.
-            The variety of the library functionality was used, you can click on the marker and see the pop-up label with
-            additional information for particular meteorite.
-            All data as the marker position and pop-up label is taken from the provided JSON file.
+            </a> open source interactive map library.
+            Each circle on the map represents a meteorite landing indicating its actual position on the map.
+            Some of the library functionality was used, you can click on the marker and see the pop-up label with
+            additional information for a particular meteorite.
         </p>
 
         <p>
-            For the second part of the project the data from the provided CSV file was used.
-            "Chart representation" page provides several different charts that are.....
-            <br>*********bla
-            <br> ****************************bla
-
-            <br> ***********************************************bbb lll aaa
+            The <a href="scvToChart.html">Chart representation</a> page has a pie chart and a bar chart.
+            The pie chart represents a proportion of the different types of meteorites found on the Earth.
+            The bar chart is a graphical representation of the size categories of the meteorites found on the Earth.
         </p>
 
 
         <div>
             <h2>Problems</h2>
 
-            <p><b>I.</b> After the initial setup was done I realized that not all entries were displayed on the map.<br>
-                This might be caused by two issuess:
+            <p>After the initial setup was done it was clear that not all entries were displayed on the map.<br>
+                This might be caused by two issues:
             <ul>
-                <li>Leaflet might have limitations on rendering large number of the objects (markers) on the map.</li>
+                <li>Leaflet might have limitations on rendering a large number of the objects (markers) on the map.</li>
                 <li>Additionally, not all the entries have valid longitude and latitude.
-                    (See the image below. The higlited stuff is the entry with no geolocation.)
+                    (See the image below. The highlighted area is the entry with no geolocation.)
                     Thus, the code execution stops on the first invalid entry throwing the error in the browser
                     console.</li>
             </ul>
@@ -90,14 +81,13 @@
             <p><b>Solutions:</b><br>
             <ul>
                 <li>Filter out the invalid values, and handle the errors, so the execution will not be interrupted.</li>
-                <li>The limitation issue was solved using the cirkles instead of markers, here is the <a
-                        href="https://stackoverflow.com/questions/43015854/large-dataset-of-markers-or-dots-in-leaflet"
+                <li>The limitation issue was solved using the circles instead of markers, here is the 
+                    <a href="https://stackoverflow.com/questions/43015854/large-dataset-of-markers-or-dots-in-leaflet"
                         target="_blank">solution</a> idea.
             </ul>
-            It seems that cirkles worked out, and performanse looks not the best at the same time, but still usable.
-            All entries are processed (see the console output on the image below.)
-            Another possible way to solve this issue, and make performace better might be a plugin for LeafletJS library
-            (not tested yet), or changing the LeafletJS library to another one.
+            It seems that circles worked better than markers, and all entries are processed (see the console output on the image below).
+            Another possible way to solve this issue, and, probably, make performance better might be a plugin for LeafletJS library
+            (not tested yet), or using another library.
 
             <div class="image">
                 <img src="noErrorConsole.JPG">
@@ -107,8 +97,8 @@
             <hr>
             <h2>Observations</h2>
             <p>
-                Provided data is not consistent.
-                The issue with rendering all entries from the JSON might not be present if data would be more accurate.
+                The provided data is not consistent.
+                The issue with rendering all entries from the JSON might not be present if geolocation were present for all entries.
             </p>
         </div>
         <hr>
@@ -118,6 +108,12 @@
         <br>
         GIThub page: <a href="https://uhnv.github.io/metorite_landings" target="_blank">Web page.</a>
         </p>
+        <hr>
+        <h2>Eastern Egg</h2>
+    <p>If you got at this point you deserve to look at this cool  <a
+            href="https://www.google.com/search?q=meteorite&rlz=1C1CHBF_enUS1030US1030&oq=meteorite&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIICAEQRRgnGDsyBwgCEAAYgAQyBwgDEAAYgAQyDwgEEAAYQxixAxiABBiKBTIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDI4NzFqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8"
+            target="_blank">animation from Google</a>.</p>
+    
     </div>
 
 </body>

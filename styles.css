@@ -40,8 +40,8 @@ p {
 }
 
 body {
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
     margin-top: 1%;
     background-color: white;
 }
@@ -68,8 +68,8 @@ footer {
     position: absolute;
     top: 75px;
     bottom: 0;
-    left: 1%;
-    right: 1%;
+    left: 2%;
+    right: 2%;
     margin-top: 10px;
     margin-left: 8px;
     margin-right: 8px;
