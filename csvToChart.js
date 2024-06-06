@@ -5,13 +5,14 @@ const csvFile = 'Meteorite_Landings.csv';
 const meteoriteClass = [];
 const meteoriteMass = [];
 
-// Function to parse CSV data
+// Function to parse CSV data and filtering out the entries that are not used.
 function parseCSVData(csvData) {
-    const rows = csvData.split(/\n|\r/).slice(1).filter(row => row.trim() !== '');
+    // Splits the CSV data into rows, accounting for both newline (\n) and carriage return (\r) delimiters.
+    const rows = csvData.split(/\n|\r/).slice(1).filter(row => row.trim() !== ''); //slice(1) removes the header row.
     // console.log(rows);        //<----- test parsed csv file
 
     const parsedData = [];
-
+    // Go through each row and retrieve the only data that will be used.
     rows.forEach(row => {
         const columns = row.split(',');
         const rowData = {
@@ -20,11 +21,11 @@ function parseCSVData(csvData) {
         };
         parsedData.push(rowData);
     });
-console.log(parsedData);           //<--------- test array of objects  {recclass: " ", mass: " "}
+    console.log(parsedData);           //<--------- test array of objects  {recclass: " ", mass: " "} only the data that will be used.
     return parsedData;
 }
 
-// Function to fetch and parse local CSV file
+// Function declaration to fetch and parse local CSV file
 async function fetchAndParseCSV(file) {
     try {
         const response = await fetch(file);
@@ -41,7 +42,7 @@ async function fetchAndParseCSV(file) {
     }
 }
 
-// Fetch and parse local CSV file
+// Function call fetchAndParseCSV(csvFile)... Fetch and parse local CSV file and fill up the containers for mass and class.
 fetchAndParseCSV(csvFile)
     .then(data => {
         if (data) {
@@ -64,11 +65,14 @@ fetchAndParseCSV(csvFile)
             const classPercentages = Object.fromEntries(
                 Object.entries(classCounts).map(([meteorClass, count]) => [meteorClass, (count / totalCount) * 100])
             );
-
+            
+            // Provide data to build pie chart.
             const labels = Object.keys(classPercentages);
             const dataPoints = Object.values(classPercentages);
 
-            // *********           Build pie chart using Chart.js           *********/
+
+            // *****************           Build pie chart using Chart.js           ***********************/
+
             const ctxPie = document.getElementById('meteoritePieChart').getContext('2d');
             new Chart(ctxPie, {
                 type: 'pie',
@@ -97,8 +101,8 @@ fetchAndParseCSV(csvFile)
                 // console.log(counts);
                 return counts;
             }, {});
-            
 
+            // Provide data to build bar chart.
             const massLabels = Object.keys(massCounts);
             const massDataPoints = Object.values(massCounts);
 
@@ -121,7 +125,7 @@ fetchAndParseCSV(csvFile)
                         y: {
                             beginAtZero: true
                         }
-                        
+
                     }
                 }
             });
