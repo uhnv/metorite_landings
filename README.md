@@ -28,6 +28,8 @@ Below is one of the entries from the provided JSON. Each row has its own index (
         "429"
     ]
 ```
+ Image 1: Data sample.
+
 The project is done using two JS libraries:
 - https://leafletjs.com/ open source map to visualize JSON data;
 - https://www.chartjs.org/ open source HTML chart library to consume data from CSV file.
