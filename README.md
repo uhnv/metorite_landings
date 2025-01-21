@@ -1,5 +1,6 @@
 ﻿# metorite_landings
-Data interpretation of meteorite landings from NASA: https://catalog.data.gov/dataset/meteorite-landings
+Data interpretation of meteorite landings from NASA using JSON and CSV input formats from: https://catalog.data.gov/dataset/meteorite-landings.
+The project has one page of description and other information according to the project, and two web pages containing map and graph data visualization.
 
 Project web page: https://uhnv.github.io/metorite_landings/
 
